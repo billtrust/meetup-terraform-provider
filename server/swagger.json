@@ -1,0 +1,183 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Billtrust Mascot API"
+    },
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/{id}": {
+            "get": {
+                "summary": "Returns a mascot",
+                "operationId": "GetMascot",
+                "consumes": [],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "$ref": "#/definitions/MascotResponse"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deletes a mascot",
+                "operationId": "DeleteMascot",
+                "consumes": [],
+                "produces": [],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Updates a mascot",
+                "operationId": "UpdateMascot",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "updateRequest",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/UpdateMascotRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "404": {
+                        "description": "Not Found"
+                    }
+                }
+            }
+        },
+        "/": {
+            "post": {
+                "summary": "Creates a mascot",
+                "operationId": "CreateMascot",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "createRequest",
+                        "in": "body",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/CreateMascotRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "The new mascot",
+                        "schema": {
+                            "$ref": "#/definitions/MascotResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "MascotResponse": {
+            "description": "A Mascot.",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "description": "returns the id",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "name": {
+                    "description": "returns the name",
+                    "type": "string",
+                    "readOnly": true
+                },
+                "description": {
+                    "description": "returns the description",
+                    "type": "string",
+                    "readOnly": true
+                }
+            }
+        },
+        "UpdateMascotRequest": {
+            "description": "Request to update a Mascot",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "name for the mascot",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "description for the mascot",
+                    "type": "string"
+                }
+            }
+        },
+        "CreateMascotRequest": {
+            "description": "Request to create a Mascot",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "name for the mascot",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "description for the mascot",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
