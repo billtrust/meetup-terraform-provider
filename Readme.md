@@ -1,6 +1,9 @@
 ## Meetup Terraform provider
 
-Welcome! This repo contains the source code and compilation/utilization instructions for the custom terrafor provider described in Billtrust's 09/23/2019 tech meetup. In here you can find a simple NodeJS server that supports the basic CRUD operations and a terraform provider that interacts with said service, along with a Dockerfile to be able compile and run the code.
+Welcome! This repo contains the source code and compilation/utilization instructions for the custom terraform provider described in Billtrust's 09/23/2019 tech meetup. In here you can find a simple NodeJS server that supports the basic CRUD operations and a terraform provider that interacts with said service, along with a Dockerfile to be able compile and run the code.
+
+### Slides
+The slides for the presentation can be found in the `slides` folder. Please note that they are `/pptx`, so PowerPoint or a compatible tool is required.
 
 ### Build
 
